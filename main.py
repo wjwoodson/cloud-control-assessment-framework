@@ -62,10 +62,19 @@ if __name__ == "__main__":
 		response.headers["Access-Control-Allow-Origin"] = "*"
 		response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
 		response.headers["Access-Control-Allow-Headers"] = "Origin, Accept, Content-Type"
-	# Route requests to the selected module
-	@app.route("/module/<name>", method=["GET", "POST", "PUT"])
-	@app.route("/module", method=["GET", "POST", "PUT"])
-	def route(name=None):
+	# Return objects from the collection of control tests
+	@app.route("/control_test/<name>", method=["GET"])
+	@app.route("/control_test", method=["GET"])
+	def control_test_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	# Route requests to the selected control test module
+	@app.route("/control_test/<name>", method=["PUT"])
+	@app.route("/control_test", method=["PUT"])
+	def control_test_put(name=None):
 		if not name: name = None
 		if router.validate(request):
 			try:
@@ -75,12 +84,23 @@ if __name__ == "__main__":
 				logger.error("Error handling request: {0}".format(str(e)))
 		else:
 			return HTTPError(400, "Bad Request")
-	@app.route("/stat_modules", method="GET")
+	# Delete objects from the collection of the control tests
+	@app.route("/control_test/<name>", method=["DELETE"])
+	@app.route("/control_test", method=["DELETE"])
+	def control_test_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+                #return json.dumps({}, indent=4)
+
 	# Return module stats
+	@app.route("/stat_modules", method="GET")
 	def stat_modules():
 		response.content_type = "application/json"
 		return json.dumps(router.stats, indent=4)
 	
+
 	# Run the bottle app
 	run(app, host="localhost", port="8300")
 
