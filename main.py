@@ -62,6 +62,42 @@ if __name__ == "__main__":
 		response.headers["Access-Control-Allow-Origin"] = "*"
 		response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
 		response.headers["Access-Control-Allow-Headers"] = "Origin, Accept, Content-Type"
+
+	# Return objects from the collection of providers
+	@app.route("/provider/<name>", method=["GET"])
+	@app.route("/provider", method=["GET"])
+	def provider_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	# Add an object to the collection of providers
+	@app.route("/provider", method=["POST"])
+	def provider_post(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	# Update an object in the collection of providers
+	@app.route("/provider/<name>", method=["PUT"])
+	def provider_put(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of providers
+	@app.route("/provider/<name>", method=["DELETE"])
+	@app.route("/provider", method=["DELETE"])
+	def provider_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	
 	# Return objects from the collection of control tests
 	@app.route("/control_test/<name>", method=["GET"])
 	@app.route("/control_test", method=["GET"])
@@ -99,7 +135,6 @@ if __name__ == "__main__":
 	def stat_modules():
 		response.content_type = "application/json"
 		return json.dumps(router.stats, indent=4)
-	
 
 	# Run the bottle app
 	run(app, host="localhost", port="8300")
