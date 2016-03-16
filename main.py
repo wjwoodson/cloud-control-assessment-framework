@@ -63,6 +63,7 @@ if __name__ == "__main__":
 		response.headers["Access-Control-Allow-Methods"] = "GET, POST, PUT, DELETE, OPTIONS"
 		response.headers["Access-Control-Allow-Headers"] = "Origin, Accept, Content-Type"
 
+	# Providers
 	# Return objects from the collection of providers
 	@app.route("/provider/<name>", method=["GET"])
 	@app.route("/provider", method=["GET"])
@@ -70,15 +71,12 @@ if __name__ == "__main__":
 		if not name: name = None
 		return HTTPError(501, "Not Implemented")
 		#response.content_type = "application/json"
-		#TODO add provider and control param filters
 		#return json.dumps({}, indent=4)
 	# Add an object to the collection of providers
 	@app.route("/provider", method=["POST"])
-	def provider_post(name=None):
-		if not name: name = None
+	def provider_post():
 		return HTTPError(501, "Not Implemented")
 		#response.content_type = "application/json"
-		#TODO add provider and control param filters
 		#return json.dumps({}, indent=4)
 	# Update an object in the collection of providers
 	@app.route("/provider/<name>", method=["PUT"])
@@ -86,7 +84,6 @@ if __name__ == "__main__":
 		if not name: name = None
 		return HTTPError(501, "Not Implemented")
 		#response.content_type = "application/json"
-		#TODO add provider and control param filters
 		#return json.dumps({}, indent=4)
 	# Delete objects from the collection of providers
 	@app.route("/provider/<name>", method=["DELETE"])
@@ -95,9 +92,144 @@ if __name__ == "__main__":
 		if not name: name = None
 		return HTTPError(501, "Not Implemented")
 		#response.content_type = "application/json"
-		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+
+	# Frameworks
+	# Return objects from the collection of frameworks
+	@app.route("/framework/<name>", method=["GET"])
+	@app.route("/framework", method=["GET"])
+	def framework_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Add an object to the collection of frameworks
+	@app.route("/framework", method=["POST"])
+	def framework_post():
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Update an object in the collection of frameworks
+	@app.route("/framework/<name>", method=["PUT"])
+	def framework_put(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of frameworks
+	@app.route("/framework/<name>", method=["DELETE"])
+	@app.route("/framework", method=["DELETE"])
+	def framework_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
 		#return json.dumps({}, indent=4)
 	
+	# Threats
+	# Return objects from the collection of threats
+	@app.route("/threat/<name>", method=["GET"])
+	@app.route("/threat", method=["GET"])
+	def threat_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add framework param filter
+		#TODO add with_controls and with_rels param bools
+		#return json.dumps({}, indent=4)
+	# Add an object to the collection of threats
+	@app.route("/threat", method=["POST"])
+	def threat_post(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Update an object in the collection of threats
+	@app.route("/threat/<name>", method=["PUT"])
+	def threat_put(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of threats
+	@app.route("/threat/<name>", method=["DELETE"])
+	@app.route("/threat", method=["DELETE"])
+	def threat_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add framework param filter
+		#return json.dumps({}, indent=4)
+
+	# Controls
+	# Return objects from the collection of controls
+	@app.route("/control/<name>", method=["GET"])
+	@app.route("/control", method=["GET"])
+	def control_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add framework param filter
+		#TODO add with_threats and with_rels param bools
+		#return json.dumps({}, indent=4)
+	# Add an object to the collection of controls
+	@app.route("/control", method=["POST"])
+	def control_post(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Update an object in the collection of controls
+	@app.route("/control/<name>", method=["PUT"])
+	def control_put(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of controls
+	@app.route("/control/<name>", method=["DELETE"])
+	@app.route("/control", method=["DELETE"])
+	def control_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add framework param filter
+		#return json.dumps({}, indent=4)
+
+	# Assessments
+	# Return objects from the collection of assessments
+	@app.route("/assessment/<name>", method=["GET"])
+	@app.route("/assessment", method=["GET"])
+	def assessment_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add full_report, with_threats, with_control_tests, with_framework param bools
+		#TODO add format param (json,html,pdf)
+		#return json.dumps({}, indent=4)
+	# Add an object to the collection of assessments
+	@app.route("/assessment", method=["POST"])
+	def assessment_post(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Update an object in the collection of asessments
+	@app.route("/assessment/<name>", method=["PUT"])
+	def assessment_put(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of assessments
+	@app.route("/assessment/<name>", method=["DELETE"])
+	@app.route("/assessment", method=["DELETE"])
+	def assessment_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#return json.dumps({}, indent=4)
+
+	# Control Tests
 	# Return objects from the collection of control tests
 	@app.route("/control_test/<name>", method=["GET"])
 	@app.route("/control_test", method=["GET"])
@@ -130,6 +262,27 @@ if __name__ == "__main__":
 		#TODO add provider and control param filters
                 #return json.dumps({}, indent=4)
 
+	# Control Test Results
+	# Return objects from the collection of control test results
+	@app.route("/control_test_result/<name>", method=["GET"])
+	@app.route("/control_test_result", method=["GET"])
+	def control_test_result_get(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+	# Delete objects from the collection of control test results
+	@app.route("/control_test_result/<name>", method=["DELETE"])
+	@app.route("/control_test_result", method=["DELETE"])
+	def control_test_result_delete(name=None):
+		if not name: name = None
+		return HTTPError(501, "Not Implemented")
+		#response.content_type = "application/json"
+		#TODO add provider and control param filters
+		#return json.dumps({}, indent=4)
+
+	# Utils
 	# Return module stats
 	@app.route("/stat_modules", method="GET")
 	def stat_modules():
