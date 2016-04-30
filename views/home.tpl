@@ -1,8 +1,4 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-	</head>
-	<body>
-	<h1> it works! </h1>
-	</body>
-</html>
+{% extends "base.tpl" %}
+{% block title %}Home{% endblock %}
+{% block header %}<h1>Home</h1>{% endblock %}
+{% block main %}It works!{% endblock %}
