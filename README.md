@@ -4,17 +4,16 @@ An extensible framework for performing and reporting on automated end user contr
 
 ## Installation
 
+Clone repository: `git clone https://github.com/wjwoodson/cloud-control-assessment-framework.git`
+
+Initialize database: `./database-setup.sh
+
 ### Requirements
 - Python 2.7
 -  bottle (packaged)
 -  sqlalchemy
 -  jinja2
 - sqlite3
-
-Clone repository: `git clone https://github.com/wjwoodson/cloud-control-assessment-framework.git`
-
-Initialize database: `python database-setup.py`
-
 
 ## Usage
 
