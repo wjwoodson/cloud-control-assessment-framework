@@ -1,3 +1,6 @@
+# router.py - cloud control assessment framework - dynamic module loading and running
+# Author: William Woodson <wjwoodson@gmail.com>
+
 import logging
 import time
 
