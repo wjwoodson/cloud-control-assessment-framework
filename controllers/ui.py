@@ -16,3 +16,7 @@ ui_app = Bottle()
 def home():
 	return template('home') 
 
+# Serve static content
+@ui_app.route('/static/<filepath:path>')
+def static_content(filepath):
+	return static_file(filepath, root='./views/static')
