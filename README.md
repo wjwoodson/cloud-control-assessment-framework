@@ -1,3 +1,7 @@
+### Deprecation notice
+This repository hasn't ever really worked and is not maintained. You should take a look at [opencontrol/compliance-masonry](https://github.com/opencontrol/compliance-masonry) for your compliance assessment needs.
+
+
 # Cloud Control Assessment Framework
 An extensible framework for performing and reporting on automated end user control tests of Cloud IaaS platforms.
 
